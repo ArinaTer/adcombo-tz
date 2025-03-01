@@ -1,0 +1,52 @@
+body {
+  @include regular;
+  background: $light;
+  color: $dark;
+  overflow-x: hidden;
+}
+
+.wrapper {
+  position: relative;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1170px;
+  width: 100%;
+  padding: 0 20px;
+  position: relative;
+  @include _768-max {
+  }
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 270px 1fr;
+  grid-template-rows: auto auto;
+  gap: 20px;
+  margin: 30px auto;
+  @include _1200-max {
+    grid-template-columns: 180px 1fr;
+  }
+  @include _768-max {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 15px auto;
+  }
+}
+
+.sidebar {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+}
+
+.credits {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+
+.features {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}

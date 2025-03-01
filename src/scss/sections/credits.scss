@@ -1,0 +1,423 @@
+.credits {
+  // .credits__title
+  &__title {
+    @include bold;
+    font-size: 40px;
+    line-height: 45px;
+    color: $dark;
+    text-shadow: 4px 4px 0px #00000040;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    position: relative;
+    @include _768-max {
+      text-shadow: none;
+      font-size: 20px;
+      line-height: 22px;
+      padding-bottom: 10px;
+      margin-bottom: 23px;
+    }
+
+    &::after {
+      content: '';
+      width: 100%;
+      height: 2px;
+      background: rgba(149, 100, 170, 0.2);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  // .credits__timer
+  &__timer {
+    background: #c15ca1;
+    padding: 13px;
+    border-radius: 10px;
+    margin-top: 30px;
+    margin-bottom: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include _1200-max {
+      gap: 8px;
+    }
+    @include _768-max {
+      display: none;
+    }
+  }
+
+  // .credits__timer-header
+  &__timer-header {
+    font-size: 40px;
+    line-height: 45px;
+    letter-spacing: 4%;
+    @include bold;
+    color: $secondary-color;
+    -webkit-text-stroke: 1px $light;
+    @include _1200-max {
+      font-size: 35px;
+    }
+  }
+
+  // .credits__timer-label
+  &__timer-label {
+    font-size: 16px;
+    line-height: 18px;
+    @include bold;
+    color: $light;
+    @include _1200-max {
+      font-size: 14px;
+      width: min-content;
+    }
+  }
+
+  // .credits__timer-value
+  &__timer-value {
+    background: $light;
+    padding: 5px 20px;
+    border-radius: 5px;
+    display: flex;
+    gap: 10px;
+    @include _1200-max {
+      padding: 5px 10px;
+    }
+  }
+
+  // .credits__timer-digit,
+  // .credits__timer-colon
+  &__timer-digit,
+  &__timer-colon {
+    font-size: 40px;
+    line-height: 45px;
+    @include _1200-max {
+      font-size: 30px;
+    }
+  }
+
+  // .credits__list
+  &__list {
+    margin-bottom: 15px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  @media (min-width: 767.98px) {
+    // .credits__swiper
+    &__swiper {
+      overflow: visible;
+      width: 100%;
+      max-width: 100%;
+      @include _768-max {
+        overflow: hidden;
+        max-width: initial;
+      }
+    }
+
+    // .credits__swiper-wrapper
+    &__swiper-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      gap: 15px 30px;
+      max-width: 100%;
+      width: 100%;
+
+      &.has-stretched {
+        flex-wrap: wrap;
+      }
+    }
+
+    // .credits__swiper-slide
+    &__swiper-slide {
+      width: 150px;
+      min-width: 150px;
+      max-width: 150px;
+    }
+
+    // .credits__stretched-wrapper
+    &__stretched-wrapper {
+      display: flex;
+      flex-wrap: nowrap;
+      width: 100%;
+      gap: 30px;
+
+      .offer {
+        background: #aa646433;
+        border: 2px solid #aa6464;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 11px 40px;
+        padding: 12px;
+      }
+
+      .offer__price-wrapper {
+        margin-bottom: 0;
+      }
+      .offer__header {
+        top: -15px;
+      }
+
+      .offer__button {
+        max-width: 185px;
+        padding: 14px;
+      }
+    }
+
+    .credits__stretched-wrapper .credits__swiper-slide,
+    .credits__swiper-wrapper.credits__has-stretched .credits__swiper-slide {
+      flex: 1;
+      min-width: 0;
+      max-width: none;
+      width: auto;
+    }
+
+    // .credits__swiper-pagination
+    &__swiper-pagination {
+      display: none;
+    }
+  }
+
+  .offer {
+    background: #9564aa1a;
+    border: 2px solid $primary-color;
+    border-radius: 10px;
+    padding: 15px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+    @include _768-max {
+      background: $primary-color;
+      border: none;
+      padding: 15px 33px;
+      margin-left: 20px;
+    }
+
+    // .offer__header
+    &__header {
+      font-size: 14px;
+      line-height: 16px;
+      @include bold;
+      background: $secondary-color;
+      padding: 4px 10px;
+      border-radius: 5px;
+      color: $dark;
+      position: absolute;
+      top: -11px;
+      left: 50%;
+      transform: translate(-50%, -5px);
+      width: max-content;
+      opacity: 0;
+      transition: all 0.3s ease;
+      pointer-events: none;
+
+      @include _768-max {
+        opacity: 1;
+        top: 50%;
+        left: -20px;
+        transform: translate(0, -50%);
+      }
+    }
+
+    // .offer__price-wrapper
+    &__price-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      margin-bottom: 11px;
+      @include _768-max {
+        justify-content: flex-end;
+        max-width: 250px;
+        width: 100%;
+        margin-bottom: 0;
+      }
+      @include _400-max {
+        max-width: 100%;
+      }
+    }
+
+    // .offer__price
+    &__price {
+      font-size: 24px;
+      line-height: 27px;
+      @include bold;
+      transition: all 0.3s ease;
+      @include _768-max {
+        color: $light;
+      }
+
+      // .offer__price-currency
+      &-currency {
+        @include bold;
+        font-size: 8px;
+        line-height: 9px;
+        color: $dark;
+        background: $secondary-color;
+        padding: 4px 3px;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+      }
+    }
+
+    // .offer__price-usd
+    &__price-usd {
+      display: none;
+      font-size: 24px;
+      line-height: 27px;
+      @include bold;
+      @include _768-max {
+        color: $light;
+        display: block;
+      }
+    }
+
+    // .offer__button
+    &__button {
+      background: $light;
+      color: #ffffff;
+      border: none;
+      padding: 17px;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+      @include medium;
+      transition: all 0.3s ease;
+      font-size: 16px;
+      line-height: 18px;
+      color: rgba(0, 0, 0, 0.2);
+      @include _768-max {
+        display: none;
+      }
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        background: $primary-color;
+
+        .offer__header {
+          transform: translate(-50%, 0px);
+          opacity: 1;
+          pointer-events: all;
+          @include _768-max {
+            transform: initial;
+          }
+        }
+
+        .offer__price {
+          color: $light;
+        }
+
+        .offer__button {
+          background: $secondary-color;
+          color: $dark;
+        }
+      }
+    }
+  }
+
+  // .credits__swiper-pagination
+  .credits__swiper-pagination {
+    position: relative;
+    bottom: initial;
+    top: initial;
+    margin-top: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    .swiper-pagination-bullet {
+      height: 7px;
+      width: 7px;
+      border-radius: 50%;
+      background-color: $secondary-color;
+      margin: 0;
+    }
+  }
+
+  // .credits__list-button
+  &__list-button {
+    display: none;
+    width: 100%;
+    background: $secondary-color;
+    padding: 17px;
+    border-radius: 10px;
+    @include bold;
+    font-size: 16px;
+    line-height: 18px;
+    margin-top: 35px;
+    @include _768-max {
+      display: block;
+    }
+  }
+
+  // .credits__checkbox
+  &__checkbox {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  // .credits__checkbox-wrapper
+  &__checkbox-wrapper {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  // .credits__checkbox-input
+  &__checkbox-input {
+    position: absolute;
+    opacity: 0;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+
+    & + .credits__checkbox-custom {
+      width: 20px;
+      height: 20px;
+      border: 2px solid $primary-color;
+      border-radius: 5px;
+      background: $light;
+      cursor: pointer;
+    }
+
+    &:checked + .credits__checkbox-custom {
+      background: $primary-color;
+      background-image: url('../img/sidebar/icons/check.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+
+  // .credits__checkbox-label
+  &__checkbox-label {
+    color: $dark;
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    line-height: 16px;
+    gap: 3px;
+    @include _768-max {
+      font-size: 10px;
+    }
+    a {
+      color: $primary-color;
+      font-size: 13px;
+      line-height: 16px;
+      cursor: pointer;
+      display: contents;
+      @include _768-max {
+        font-size: 10px;
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          color: darken($primary-color, 10%);
+        }
+      }
+    }
+  }
+}

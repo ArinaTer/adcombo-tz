@@ -1,0 +1,15 @@
+// Ubuntu
+@include font-face('UbuntuBold', '../files/fonts/Ubuntu/Ubuntu-Bold');
+@include font-face('UbuntuMedium', '../files/fonts/Ubuntu/Ubuntu-Medium');
+@include font-face('UbuntuRegular', '../files/fonts/Ubuntu/Ubuntu-Regular');
+
+//Ubuntu
+@mixin bold {
+  font-family: 'UbuntuBold', Arial, sans-serif;
+}
+@mixin medium {
+  font-family: 'UbuntuMedium', Arial, sans-serif;
+}
+@mixin regular {
+  font-family: 'UbuntuRegular', Arial, sans-serif;
+}
